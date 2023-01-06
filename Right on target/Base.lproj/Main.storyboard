@@ -37,9 +37,9 @@
                                 <color key="thumbTintColor" systemColor="systemPinkColor"/>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYo-uS-eZk">
-                                <rect key="frame" x="360.33333333333331" y="241.66666666666666" width="131.66666666666669" height="25.333333333333343"/>
+                                <rect key="frame" x="354.33333333333331" y="241.66666666666666" width="143.66666666666669" height="26.333333333333343"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Проверить">
+                                <buttonConfiguration key="configuration" style="filled" title="Начать игру">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                     <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
@@ -49,33 +49,77 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arK-jN-A1w">
-                                <rect key="frame" x="421" y="297" width="10.333333333333314" height="21"/>
+                                <rect key="frame" x="421" y="298" width="10" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загадонное число:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQR-HX-L40">
+                                <rect key="frame" x="262" y="298" width="151" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="151" id="pVS-HJ-iWI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Раунд:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afW-i0-E9T">
+                                <rect key="frame" x="352" y="59" width="61" height="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.33880155693309505" green="0.53420667058544147" blue="0.96611279249191284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A41-Jl-046">
+                                <rect key="frame" x="421" y="59" width="21" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="Z9S-AV-dax"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Перетащите ползунок на загаданное число!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wg-XT-Hgc">
+                                <rect key="frame" x="286" y="130.66666666666666" width="280.33333333333326" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="l4I-9Q-DsS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="arK-jN-A1w" secondAttribute="bottom" constant="41" id="6N6-lr-asU"/>
+                            <constraint firstItem="A41-Jl-046" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="6xW-tD-fal"/>
+                            <constraint firstItem="A41-Jl-046" firstAttribute="centerY" secondItem="afW-i0-E9T" secondAttribute="centerY" id="7z6-dw-A3c"/>
                             <constraint firstItem="arK-jN-A1w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9sf-QY-5Kp"/>
+                            <constraint firstItem="A41-Jl-046" firstAttribute="leading" secondItem="arK-jN-A1w" secondAttribute="leading" id="EnR-Ls-VWo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A3O-LF-vDS" secondAttribute="trailing" constant="65" id="Ig7-rW-2sJ"/>
                             <constraint firstItem="A3O-LF-vDS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="T2I-ae-bCp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="arK-jN-A1w" secondAttribute="bottom" constant="40" id="UkF-aS-X3a"/>
                             <constraint firstItem="lYo-uS-eZk" firstAttribute="top" secondItem="A3O-LF-vDS" secondAttribute="bottom" constant="30" id="Vyy-wj-jql"/>
+                            <constraint firstItem="AQR-HX-L40" firstAttribute="baseline" secondItem="arK-jN-A1w" secondAttribute="baseline" id="Xr8-uv-hwX"/>
                             <constraint firstItem="arK-jN-A1w" firstAttribute="top" secondItem="lYo-uS-eZk" secondAttribute="bottom" constant="30" id="XtD-3n-LSb"/>
+                            <constraint firstItem="afW-i0-E9T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="aHZ-n3-S8N"/>
+                            <constraint firstItem="afW-i0-E9T" firstAttribute="trailing" secondItem="AQR-HX-L40" secondAttribute="trailing" id="cDQ-dV-0T9"/>
+                            <constraint firstItem="A3O-LF-vDS" firstAttribute="top" secondItem="7Wg-XT-Hgc" secondAttribute="bottom" constant="30" id="fMG-YP-JOS"/>
+                            <constraint firstItem="arK-jN-A1w" firstAttribute="leading" secondItem="AQR-HX-L40" secondAttribute="trailing" constant="8" id="gY3-OY-1iZ"/>
+                            <constraint firstItem="7Wg-XT-Hgc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iEW-Wz-aq9"/>
                             <constraint firstItem="A3O-LF-vDS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="w1C-9y-R4j"/>
                             <constraint firstItem="lYo-uS-eZk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zOw-Xg-1FB"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="button" destination="lYo-uS-eZk" id="SBE-v7-KJC"/>
                         <outlet property="label" destination="arK-jN-A1w" id="W9K-RO-EWd"/>
+                        <outlet property="roundNum" destination="A41-Jl-046" id="tj5-xz-FRp"/>
                         <outlet property="slider" destination="A3O-LF-vDS" id="IP9-he-seQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-34"/>
+            <point key="canvasLocation" x="131.69014084507043" y="-34.351145038167935"/>
         </scene>
     </scenes>
     <resources>
@@ -83,6 +127,9 @@
         <image name="50.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
