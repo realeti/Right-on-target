@@ -37,9 +37,9 @@
                                 <color key="thumbTintColor" systemColor="systemPinkColor"/>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYo-uS-eZk">
-                                <rect key="frame" x="354.33333333333331" y="241.66666666666666" width="143.66666666666669" height="26.333333333333343"/>
+                                <rect key="frame" x="360.33333333333331" y="241.66666666666666" width="131.66666666666669" height="26.333333333333343"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Начать игру">
+                                <buttonConfiguration key="configuration" style="filled" title="Проверить">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                     <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
