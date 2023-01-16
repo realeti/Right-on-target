@@ -88,9 +88,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtE-89-3TU">
-                                <rect key="frame" x="695" y="358" width="132" height="35"/>
+                                <rect key="frame" x="695.33333333333337" y="358" width="131.66666666666663" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="О программе"/>
+                                <connections>
+                                    <action selector="showNextScreen" destination="BYZ-38-t0r" eventType="touchUpInside" id="iIJ-4a-jH7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -117,6 +120,7 @@
                             <constraint firstItem="lYo-uS-eZk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zOw-Xg-1FB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cXi-gH-kXi"/>
                     <connections>
                         <outlet property="button" destination="lYo-uS-eZk" id="SBE-v7-KJC"/>
                         <outlet property="label" destination="arK-jN-A1w" id="W9K-RO-EWd"/>
@@ -131,7 +135,7 @@
         <!--Second View Controller-->
         <scene sceneID="P7Q-zD-Pe3">
             <objects>
-                <viewController id="tlZ-PC-4Ts" customClass="SecondViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tlZ-PC-4Ts" customClass="SecondViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bHg-4T-4f2">
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,6 +144,9 @@
                                 <rect key="frame" x="389" y="179" width="74" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Назад"/>
+                                <connections>
+                                    <action selector="hideCurrentScene" destination="tlZ-PC-4Ts" eventType="touchUpInside" id="olY-HX-XVv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bSJ-Ql-43x"/>
@@ -149,10 +156,11 @@
                             <constraint firstItem="djm-xP-wrZ" firstAttribute="centerX" secondItem="bHg-4T-4f2" secondAttribute="centerX" id="fUE-Ba-NiD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nDS-Gb-GwN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbk-l8-HSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="702"/>
+            <point key="canvasLocation" x="805" y="-34"/>
         </scene>
     </scenes>
     <resources>

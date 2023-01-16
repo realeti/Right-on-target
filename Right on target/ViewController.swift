@@ -26,6 +26,20 @@ class ViewController: UIViewController {
     // сумма очков за раунд
     var points: Int = 0
     
+    // ленивое свойство для хранения View Controller
+    lazy var secondViewController: SecondViewController = getSecondViewController()
+    
+    // приватный метод загружающий View Controller
+    private func getSecondViewController() -> SecondViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SecondViewController")
+        return viewController as! SecondViewController
+    }
+    
+    @IBAction func showNextScreen() {
+        self.present(secondViewController, animated: true, completion: nil)
+    }
+    
     override func loadView() {
         super.loadView()
         print("loadView")
