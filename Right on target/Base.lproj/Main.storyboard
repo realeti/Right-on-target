@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -91,9 +91,6 @@
                                 <rect key="frame" x="695.33333333333337" y="358" width="131.66666666666663" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="О программе"/>
-                                <connections>
-                                    <segue destination="tlZ-PC-4Ts" kind="show" id="yGh-T6-M3g"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -120,7 +117,6 @@
                             <constraint firstItem="lYo-uS-eZk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zOw-Xg-1FB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cXi-gH-kXi"/>
                     <connections>
                         <outlet property="button" destination="lYo-uS-eZk" id="SBE-v7-KJC"/>
                         <outlet property="label" destination="arK-jN-A1w" id="W9K-RO-EWd"/>
@@ -132,49 +128,12 @@
             </objects>
             <point key="canvasLocation" x="1633.0985915492959" y="-34.351145038167935"/>
         </scene>
-        <!--Second View Controller-->
-        <scene sceneID="P7Q-zD-Pe3">
-            <objects>
-                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tlZ-PC-4Ts" customClass="SecondViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bHg-4T-4f2">
-                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="bSJ-Ql-43x"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="nDS-Gb-GwN"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bbk-l8-HSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2306.3380281690143" y="-34.351145038167935"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="vXQ-XU-chd">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mzy-aQ-F0R" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ihq-i8-X12">
-                        <rect key="frame" x="0.0" y="59" width="852" height="32"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ree-AQ-hKs"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uxl-u8-Vg9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="882.3943661971831" y="-34.351145038167935"/>
-        </scene>
     </scenes>
     <resources>
         <image name="01.square.fill" catalog="system" width="128" height="114"/>
         <image name="50.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
