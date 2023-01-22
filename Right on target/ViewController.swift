@@ -14,111 +14,69 @@ class ViewController: UIViewController {
     @IBOutlet var roundNum: UILabel!
     @IBOutlet var button: UIButton!
     
-    // загаданное число
-    var number: Int = 0
+    var game: Game!
     
-    // раунд
-    var round: Int = 1
-    
-    // максимальное число раундов
-    let roundMax: Int = 5
-
-    // сумма очков за раунд
-    var points: Int = 0
-    
-    // ленивое свойство для хранения View Controller
-    lazy var secondViewController: SecondViewController = getSecondViewController()
-    
-    // приватный метод загружающий View Controller
-    private func getSecondViewController() -> SecondViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SecondViewController")
-        return viewController as! SecondViewController
-    }
-    
-    override func loadView() {
-        super.loadView()
-        print("loadView")
-    }
+    // - Жизненный цикл
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
         
-        // генерируем случайное число и передаем значение случайного числа в label
-        generateNewRound()
+        // Cоздаем экземпляр сущности игра
+        game = Game(startValue: 1, endValue: 50, rounds: 5)
+        
+        // Обновляем данные о текущем значении загаданного числа
+        updateSecretValueOnLabel(newText: String(game.currentSecretValue))
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("viewWillAppear")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("viewDidAppear")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("viewWillDisappear")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("viewDidDisappear")
-    }
+    // - Взаимодействие View и Model
 
+    // Проверка выбранного пользователем числа
     @IBAction func checkNumber() {
-    // если игра только начинается
-    // получаем значение на слайдере
-        let numSlider = Int(self.slider.value.rounded())
+        // Высчитываем очки за раунд
+        game.calculateScore(with: Int(slider.value))
         
-        // сравниваем значение с загаданным и подсчитываем очки
-        if numSlider > self.number {
-            self.points += 50 - numSlider + self.number
-        }
-        else if numSlider < self.number {
-            self.points += 50 - self.number + numSlider
+        // Проверяем окончена ли игра
+        if game.isGameEnded {
+            showAlertEndGame(score: game.score)
+            game.restartGame()
         }
         else {
-            self.points += 50
+            showAlertRound(score: game.roundScore, round: game.currentRound)
+            game.startNewRound()
         }
         
-        if self.round == roundMax {
-            // выводим информационное окно с результатами игры
-            let alert = UIAlertController(
-                title: "Игра окончена",
-                message: "Вы заработали \(self.points) очков из 250 возможных!",
-                preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Начать заново", style: .default, handler: nil))
-            
-            self.round = 1
-            self.points = 0
-            generateNewRound()
-            self.present(alert, animated: true, completion: nil)
-        }
-        else {
-            let alert = UIAlertController(
-                title: "Итоги раунда №\(round):",
-                message: "Вы заработали \(self.points) очков! Вы поставили ползунок на число: \(numSlider)",
-                preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Далее", style: .default, handler: {
-                _ in
-                self.round += 1
-                self.generateNewRound()
-            }))
-            
-            self.present(alert, animated: true, completion: nil)
-        }
+        // Обновляем данные о текущем значении загаданного числа
+        updateSecretValueOnLabel(newText: String(game.currentSecretValue))
     }
-    func generateNewRound() {
-        // генерируем случайное число
-        self.number = Int.random(in: 1...50)
+    
+    // - Обновление View
+    
+    // Обновление текста загаданного числа
+    private func updateSecretValueOnLabel(newText: String) {
         // передаем значение случайного числа в label
-        self.label.text = String(self.number)
-        // отображаем № раунда
-        self.roundNum.text = String(self.round)
+        label.text = newText
+        // отображаем номер раунда
+        roundNum.text = String(game.currentRound)
+    }
+    
+    // Отображение всплывающего окна со счетом
+    private func showAlertEndGame(score: Int) {
+        let alert = UIAlertController(
+            title: "Игра окончена",
+            message: "Вы заработали \(score) очков из 250 возможных!",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Начать заново", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showAlertRound(score: Int, round: Int) {
+        let alert = UIAlertController(
+            title: "Итоги раундоа №\(round):",
+            message: "Вы заработали \(score) очков! Вы поставили ползунок на число \(Int(slider.value))",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Далее", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
