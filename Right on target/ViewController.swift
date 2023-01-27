@@ -20,13 +20,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
         
         // Cоздаем экземпляр сущности игра
         game = Game(startValue: 1, endValue: 50, rounds: 5)
         
         // Обновляем данные о текущем значении загаданного числа
-        updateSecretValueOnLabel(newText: String(game.currentSecretValue))
+        updateSecretValueOnLabel(newSecretValue: String(game.currentSecretValue), round: String(game.currentRound))
     }
     
     // - Взаимодействие View и Model
@@ -47,17 +46,17 @@ class ViewController: UIViewController {
         }
         
         // Обновляем данные о текущем значении загаданного числа
-        updateSecretValueOnLabel(newText: String(game.currentSecretValue))
+        updateSecretValueOnLabel(newSecretValue: String(game.currentSecretValue), round: String(game.currentRound))
     }
     
     // - Обновление View
     
     // Обновление текста загаданного числа
-    private func updateSecretValueOnLabel(newText: String) {
+    private func updateSecretValueOnLabel(newSecretValue: String, round: String) {
         // передаем значение случайного числа в label
-        label.text = newText
+        label.text = newSecretValue
         // отображаем номер раунда
-        roundNum.text = String(game.currentRound)
+        roundNum.text = round
     }
     
     // Отображение всплывающего окна со счетом
@@ -72,7 +71,7 @@ class ViewController: UIViewController {
     
     private func showAlertRound(score: Int, round: Int) {
         let alert = UIAlertController(
-            title: "Итоги раундоа №\(round):",
+            title: "Итоги раунда №\(round):",
             message: "Вы заработали \(score) очков! Вы поставили ползунок на число \(Int(slider.value))",
             preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Далее", style: .default, handler: nil))

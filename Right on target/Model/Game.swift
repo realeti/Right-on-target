@@ -11,6 +11,9 @@ protocol GameProtocol {
     // Количество заработанных очков
     var score: Int { get }
     
+    // Количество заработанных очков за раунд
+    var roundScore: Int { get }
+    
     // Загаданное значение
     var currentSecretValue: Int { get }
     
@@ -30,14 +33,11 @@ protocol GameProtocol {
 class Game: GameProtocol {
     var score: Int = 0
     var roundScore: Int = 0
-    
-    // Минимальное загаданное значение
-    private var minSecretValue: Int
-    
-    // Максимальное загаданное значение
-    private var maxSecretValue: Int
-    
     var currentSecretValue: Int = 0
+    
+    // Минимальное и максимальное загаданное значение
+    private var minSecretValue: Int
+    private var maxSecretValue: Int
     
     // Количество раундов
     private var lastRound: Int
