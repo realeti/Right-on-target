@@ -21,8 +21,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Создаем генератор случайных чисел
+        let generator = NumberGenerator(startValue: 1, endValue: 50)!
+        
         // Cоздаем экземпляр сущности игра
-        game = Game(startValue: 1, endValue: 50, rounds: 5)
+        game = Game(valueGenerator: generator, rounds: 5)
         
         // Обновляем данные о текущем значении загаданного числа
         updateSecretValueOnLabel(newSecretValue: String(game.currentSecretValue), round: String(game.currentRound))
