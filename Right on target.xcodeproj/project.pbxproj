@@ -14,6 +14,8 @@
 		C66238B02961E7A800B32DE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66238AE2961E7A800B32DE6 /* Main.storyboard */; };
 		C66238B22961E7A900B32DE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66238B12961E7A900B32DE6 /* Assets.xcassets */; };
 		C66238B52961E7A900B32DE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66238B32961E7A900B32DE6 /* LaunchScreen.storyboard */; };
+		C690188D298975EB00E1FB6B /* GameRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = C690188C298975EB00E1FB6B /* GameRound.swift */; };
+		C690188F298983F800E1FB6B /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C690188E298983F800E1FB6B /* NumberGenerator.swift */; };
 		C69A595529771C1B00ABCC2F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A595429771C1B00ABCC2F /* Game.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		C66238B12961E7A900B32DE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C66238B42961E7A900B32DE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C66238B62961E7A900B32DE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C690188C298975EB00E1FB6B /* GameRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRound.swift; sourceTree = "<group>"; };
+		C690188E298983F800E1FB6B /* NumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGenerator.swift; sourceTree = "<group>"; };
 		C69A595429771C1B00ABCC2F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				C69A595429771C1B00ABCC2F /* Game.swift */,
+				C690188C298975EB00E1FB6B /* GameRound.swift */,
+				C690188E298983F800E1FB6B /* NumberGenerator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +162,8 @@
 				C69A595529771C1B00ABCC2F /* Game.swift in Sources */,
 				C66238AD2961E7A800B32DE6 /* ViewController.swift in Sources */,
 				C66238A92961E7A800B32DE6 /* AppDelegate.swift in Sources */,
+				C690188F298983F800E1FB6B /* NumberGenerator.swift in Sources */,
+				C690188D298975EB00E1FB6B /* GameRound.swift in Sources */,
 				C66238AB2961E7A800B32DE6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,7 +323,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.uk-servers.Right-on-target";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -343,7 +351,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.uk-servers.Right-on-target";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
