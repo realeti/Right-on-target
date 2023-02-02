@@ -16,7 +16,7 @@ protocol GameProtocol {
     var isGameEnded: Bool { get }
     
     // Обработчик раундов
-    var gameRound: GameRoundProtocol! { get }
+    var gameRound: GameRoundProtocol { get }
     // Генератор случайного значения
     var secretValueGenerator: GeneratorProtocol { get }
     
@@ -29,12 +29,11 @@ protocol GameProtocol {
 class Game: GameProtocol {
     var score: Int = 0
     var currentSecretValue: Int = 0
-    var currentRound: Int = 0
     var roundScore: Int = 0
     
     // Обработка раундов
     private var countRounds: Int
-    var gameRound: GameRoundProtocol!
+    var gameRound: GameRoundProtocol
     
     // Генератор случайного числа
     var secretValueGenerator: GeneratorProtocol
@@ -47,12 +46,11 @@ class Game: GameProtocol {
         return false
     }
     
-    init(valueGenerator: GeneratorProtocol, rounds: Int) {
-        gameRound = GameRound()
+    init(valueGenerator: GeneratorProtocol, roundControl: GameRoundProtocol, rounds: Int) {
         secretValueGenerator = valueGenerator
+        gameRound = roundControl
         countRounds = rounds
         startNewRound()
-        currentRound = gameRound.currentRound
     }
     
     func restartGame() {
@@ -63,7 +61,6 @@ class Game: GameProtocol {
     func startNewRound() {
         gameRound.startNewRound(maxRounds: countRounds)
         currentSecretValue = self.getNewSecretValue()
-        currentRound = gameRound.currentRound
     }
     
     private func getNewSecretValue() -> Int {
@@ -75,17 +72,14 @@ class Game: GameProtocol {
         if value > currentSecretValue {
             score += 50 - value + currentSecretValue
             gameRound.roundScore = 50 - value + currentSecretValue
-            roundScore = gameRound.roundScore
         }
         else if value < currentSecretValue {
             score += 50 - currentSecretValue + value
             gameRound.roundScore = 50 - currentSecretValue + value
-            roundScore = gameRound.roundScore
         }
         else {
             score += 50
             gameRound.roundScore = 50
-            roundScore = gameRound.roundScore
         }
     }
 }
