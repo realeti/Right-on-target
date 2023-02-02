@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var button: UIButton!
     
     var game: Game!
+    var gameRound: GameRound!
     
     // - Жизненный цикл
 
@@ -24,11 +25,14 @@ class ViewController: UIViewController {
         // Создаем генератор случайных чисел
         let generator = NumberGenerator(startValue: 1, endValue: 50)!
         
+        // Cоздаем обработчик раундов
+        gameRound = GameRound()
+        
         // Cоздаем экземпляр сущности игра
-        game = Game(valueGenerator: generator, rounds: 5)
+        game = Game(valueGenerator: generator, roundControl: gameRound, rounds: 5)
         
         // Обновляем данные о текущем значении загаданного числа
-        updateSecretValueOnLabel(newSecretValue: String(game.currentSecretValue), round: String(game.currentRound))
+        updateSecretValueOnLabel(newSecretValue: String(game.currentSecretValue), round: String(gameRound.currentRound))
     }
     
     // - Взаимодействие View и Model
@@ -44,12 +48,12 @@ class ViewController: UIViewController {
             game.restartGame()
         }
         else {
-            showAlertRound(score: game.roundScore, round: game.currentRound)
+            showAlertRound(score: gameRound.roundScore, round: gameRound.currentRound)
             game.startNewRound()
         }
         
         // Обновляем данные о текущем значении загаданного числа
-        updateSecretValueOnLabel(newSecretValue: String(game.currentSecretValue), round: String(game.currentRound))
+        updateSecretValueOnLabel(newSecretValue: String(game.currentSecretValue), round: String(gameRound.currentRound))
     }
     
     // - Обновление View
