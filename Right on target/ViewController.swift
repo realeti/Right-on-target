@@ -18,9 +18,15 @@ class ViewController: UIViewController {
     var gameRound: GameRound!
     
     // - Жизненный цикл
+    
+    override func loadView() {
+        super.loadView()
+        print("loadView")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad")
         
         // Создаем генератор случайных чисел
         let generator = NumberGenerator(startValue: 1, endValue: 50)!
@@ -33,6 +39,26 @@ class ViewController: UIViewController {
         
         // Обновляем данные о текущем значении загаданного числа
         updateSecretValueOnLabel(newSecretValue: String(game.currentSecretValue), round: String(gameRound.currentRound))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWillAppear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("viewWillDissapear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("viewDidDisappear")
     }
     
     // - Взаимодействие View и Model
