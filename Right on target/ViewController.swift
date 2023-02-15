@@ -17,13 +17,15 @@ class ViewController: UIViewController {
     var game: Game!
     var gameRound: GameRound!
     
+    lazy var colorViewController: ColorViewController = getColorViewController()
+    
     // - Жизненный цикл
     
     override func loadView() {
         super.loadView()
         print("loadView")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
@@ -61,8 +63,23 @@ class ViewController: UIViewController {
         print("viewDidDisappear")
     }
     
+    // Переход к следующей сцене
+    @IBAction func showNextScreen() {
+        // Отображение сцены на экране
+        self.present(colorViewController, animated: true, completion: nil)
+    }
+    
+    private func getColorViewController() -> ColorViewController{
+        // Загрузка story board
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        // Загрузка View Controller и его сцены со StoryBoard
+        let viewController = storyboard.instantiateViewController(withIdentifier: "ColorViewController")
+        
+        return viewController as! ColorViewController
+    }
+    
     // - Взаимодействие View и Model
-
+    
     // Проверка выбранного пользователем числа
     @IBAction func checkNumber() {
         // Высчитываем очки за раунд
