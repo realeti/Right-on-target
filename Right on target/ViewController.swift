@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         self.present(colorViewController, animated: true, completion: nil)
     }
     
-    private func getColorViewController() -> ColorViewController{
+    private func getColorViewController() -> ColorViewController {
         // Загрузка story board
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         // Загрузка View Controller и его сцены со StoryBoard
