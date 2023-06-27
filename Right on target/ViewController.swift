@@ -46,6 +46,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("viewWillAppear")
+        self.view.backgroundColor = .systemIndigo
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,9 +74,13 @@ class ViewController: UIViewController {
         // Загрузка story board
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         // Загрузка View Controller и его сцены со StoryBoard
-        let viewController = storyboard.instantiateViewController(withIdentifier: "ColorViewController")
+        let viewController = storyboard.instantiateViewController(withIdentifier: "ColorViewController") as! ColorViewController
         
-        return viewController as! ColorViewController
+        viewController.completionHandler = { [weak self] color in
+            self?.view.backgroundColor = color
+        }
+        
+        return viewController
     }
     
     // - Взаимодействие View и Model

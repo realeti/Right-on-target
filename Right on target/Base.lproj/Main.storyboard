@@ -142,8 +142,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#hex color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3o-Ry-1X3">
-                                <rect key="frame" x="386" y="53" width="80" height="20.333333333333329"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3o-Ry-1X3">
+                                <rect key="frame" x="380.66666666666669" y="53" width="90.666666666666686" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -167,26 +167,41 @@
                                         <rect key="frame" x="0.0" y="0.0" width="106" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Вариант 1"/>
+                                        <connections>
+                                            <action selector="setColorDefault" destination="ry0-U3-SXS" eventType="touchUpInside" id="uUM-8Q-pZj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwB-BA-ffn">
                                         <rect key="frame" x="130" y="0.0" width="106" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Вариант 2"/>
+                                        <connections>
+                                            <action selector="setColorBlue" destination="ry0-U3-SXS" eventType="touchUpInside" id="Yjt-g0-nms"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrK-zU-Rb0">
                                         <rect key="frame" x="260" y="0.0" width="106" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Вариант 3"/>
+                                        <connections>
+                                            <action selector="setColorPurple" destination="ry0-U3-SXS" eventType="touchUpInside" id="v5h-JQ-ijR"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coi-8g-tmj">
                                         <rect key="frame" x="390" y="0.0" width="106" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Вариант 4"/>
+                                        <connections>
+                                            <action selector="setColorGreen" destination="ry0-U3-SXS" eventType="touchUpInside" id="skt-Xr-46f"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZG-e8-xIL">
                                         <rect key="frame" x="520" y="0.0" width="106" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Вариант 5"/>
+                                        <connections>
+                                            <action selector="setColorWhite" destination="ry0-U3-SXS" eventType="touchUpInside" id="PSu-am-rMJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
