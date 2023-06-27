@@ -1,6 +1,6 @@
 # Right on target
 
-_**Русский** | [English](README.md) | [Українська](README.ua.md)_
+_**Русский** | [Английский](README.md) | [Украинский](README.ua.md)_
 
 Right on target - простое приложение для знакомства с UIKit.
 * Игра состоит из 5 раундов.
