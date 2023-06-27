@@ -76,8 +76,8 @@ class ViewController: UIViewController {
         // Загрузка View Controller и его сцены со StoryBoard
         let viewController = storyboard.instantiateViewController(withIdentifier: "ColorViewController") as! ColorViewController
         
-        viewController.completionHandler = { [weak self] color in
-            self?.view.backgroundColor = color
+        viewController.completionHandler = { [unowned self] color in
+            self.view.backgroundColor = color
         }
         
         return viewController
@@ -132,6 +132,5 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Далее", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-
 }
 
