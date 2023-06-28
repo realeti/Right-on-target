@@ -9,5 +9,5 @@ Right on target - простое приложение для знакомств�
 * По окончанию 5 раундов вы увидите свой результат.
 * Есть возможность изменять цветовой стиль игры по кнопке расположенной справа снизу.
 
-![Screenshot 2023-06-26 at 21 19 30](https://github.com/realeti/Right-on-target/assets/30148823/70197971-14d7-4bf9-9c32-56205195d7e9)
-![Screenshot 2023-06-26 at 21 19 44](https://github.com/realeti/Right-on-target/assets/30148823/1f3a9360-7bfa-4a65-8759-48f972318c6b)
+![right1](https://github.com/realeti/Right-on-target/assets/30148823/8ad1470e-3bad-4ed8-a0a7-af1e7525f4f3)
+![right2](https://github.com/realeti/Right-on-target/assets/30148823/62217f5d-9d64-420d-ba27-b3df23a1d4f9)
